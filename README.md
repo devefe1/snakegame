@@ -2,7 +2,7 @@
 
 
 ## Wireframe
-![wireframe](assets/wireframe.png)
+![wireframe](./assets/wireframe.png)
 
 ## Game instructions // Game rules // etc.
 
