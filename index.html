@@ -1,0 +1,64 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Snake Game V2</title> 
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script> 
+</head> 
+
+<body>
+ <div class="home_container">
+    <img class="bkg" src="./assets/snake.jpg">  
+    <div class="buttonRow">
+         
+        <div class="buttons">
+            <button class="page1buttons">
+                <h3>START</h3>
+            </button>
+            <button class="page1buttons">
+                <h3>RULES</h3>
+            </button>
+        </div>
+    </div> 
+</div>
+
+
+<!-- <div class="scoreboard">
+    <div id="display"></div>
+    <img id="coin" src="./assets/pngwave (1).png">
+</div> -->
+
+<button class ="how_to">RULES</button>
+<div class ="modal">
+    <div class ="modal-content">
+        <span class="close-button">x</span>
+        <h2>This game involves two snakes in a dimension. Each snake eats food which 
+            pops up in random spots in the space after being eaten . Each time the food gets eaten by either snake they grow in length. You have to avoid the snake in order to get the Food. You lose if you bite the other snake or hit the wall . The more food you eat you get coins which can help re-spawn if you bite the snake or hit the wall !</h2>
+        </div>  
+    </div>
+
+<div id="winModal" class="modal">
+    <div class="modal-content">
+    <span class="close">x</span>
+    <h3>YOU WIN!</h3>
+    </div>
+</div>
+    <div id="loseModal" class="modal">
+    <div class="modal-content">
+    <span class="close">x</span>
+    <h3>YOU LOSE!</h3>
+    <button id="respawn">
+        <h2>RESPAWN?</h2>
+    </button>
+    </div>
+</div>
+
+
+
+<script src="main.js"></script>
+
+    </body>
+     </html>
