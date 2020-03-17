@@ -5,42 +5,50 @@
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Snake Game V2</title> 
+        <style>
+            canvas{
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
     <link rel="stylesheet" type="text/css" href="style.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script> 
 </head> 
 
 <body>
- <div class="home_container">
+<canvas id="snake" width="608" height="608"></canvas>
+    <!-- <audio id="audio" style="display:none;" src="/assets/Pvlace x MD - Atmen 120bpm.wav" controls autoplay loop onloadeddata="setHalfVolume()"></audio> -->
+<!-- <header>
+    <div class="scoreboard">
+        <div id="display"></div>
+        <img id="coin" src="./assets/pngwave (1).png">
+    </div>
+</header> -->
+
+<div class="home_container">
     <img class="bkg" src="./assets/snake.jpg">  
-    <div class="buttonRow">
-         
-        <div class="buttons">
-            <button class="page1buttons">
-                <h3>START</h3>
-            </button>
-            <button class="page1buttons">
-                <h3>RULES</h3>
-            </button>
+
+<div class="buttonRow">
+     <div class="buttons">
+        <button class="startButton">START</button>
+
+ <button class ="how_to">RULES</button>
+    <div class ="modal">
+        <div class ="modal-content">
+            <span class="closeButton">×</span>
+                <h2>This game involves two snakes in a dimension. Each snake eats food which 
+            pops up in random spots in the space after being eaten . Each time the food gets eaten by either snake they grow in length. You have to avoid the snake in order to get the Food. You lose if you bite the other snake or hit the wall . The more food you eat you get coins which can help re-spawn if you bite the snake or hit the wall !</h2>
+        </div>  
+    </div>
         </div>
     </div> 
 </div>
 
 
-<!-- <div class="scoreboard">
-    <div id="display"></div>
-    <img id="coin" src="./assets/pngwave (1).png">
-</div> -->
 
-<button class ="how_to">RULES</button>
-<div class ="modal">
-    <div class ="modal-content">
-        <span class="close-button">x</span>
-        <h2>This game involves two snakes in a dimension. Each snake eats food which 
-            pops up in random spots in the space after being eaten . Each time the food gets eaten by either snake they grow in length. You have to avoid the snake in order to get the Food. You lose if you bite the other snake or hit the wall . The more food you eat you get coins which can help re-spawn if you bite the snake or hit the wall !</h2>
-        </div>  
-    </div>
 
-<div id="winModal" class="modal">
+
+<!-- <div id="winModal" class="modal">
     <div class="modal-content">
     <span class="close">x</span>
     <h3>YOU WIN!</h3>
@@ -54,11 +62,16 @@
         <h2>RESPAWN?</h2>
     </button>
     </div>
-</div>
+</div> -->
 
-
-
+</body>
 <script src="main.js"></script>
-
-    </body>
+<script src="modal.js"></script>
+<script src="snake.js"></script>
+<script>
+    function setHalfVolume() {
+        var myAudio = document.getElementById("audio");
+        myAudio.volume = 0.2;
+    }
+</script>
      </html>
