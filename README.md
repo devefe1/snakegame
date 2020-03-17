@@ -43,3 +43,10 @@ Play this card to change the color to be matched.
 
 ### Monday
 1. Tweaks and advance HTML/CSS (animations)
+
+
+
+###
+https://www.w3schools.com/jquery/jquery_hide_show.asp
+https://www.w3schools.com/css/css_inline-block.asp
+https://sabe.io/tutorials/how-to-create-modal-popup-box

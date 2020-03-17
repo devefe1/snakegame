@@ -1,6 +1,5 @@
-var cnvas = document.getElementById('canvas');
-var ctx = cnvas.getContext('2d');
-console.log(ctx);
+let cvs = document.getElementById('snake');
+let ctx = cvs.getContext('2d');
 
 const box = 32;
 
@@ -14,10 +13,7 @@ foodPic.src = "/assets/food.png";
 
 let snake = [];
 
-snake[0] = {
-    x : 9 * box,
-    y : 10 * box
-};
+snake[0] = { x : 9 * box, y : 10 * box};
 
 //food
 let food = {
@@ -37,18 +33,14 @@ document.addEventListener("keydown", direction);
 
 function direction(event){
     let key = event.keyCode;
-    if(key == 37 && d != "RIGHT"){
-        left.play();
-        direc = "LEFT";
-    } else if(key == 38 && d != "DOWN"){
+    if(key == 37 && direc != "RIGHT"){
+         direc = "LEFT";
+    } else if(key == 38 && direc != "DOWN"){
         direc = "UP";
-        up.play();
-    } else if(key == 39 && d != "LEFT"){
+    } else if(key == 39 && direc != "LEFT"){
         direc = "RIGHT";
-        right.play();
-    } else if(key == 40 && d != "UP"){
+    } else if(key == 40 && direc != "UP"){
         direc = "DOWN";
-        down.play();
     }
 }
 
@@ -65,7 +57,7 @@ function collision(head,array){
 //put on canvas
 
 function draw(){
-    ctx.drawImage(ground,0,0);
+    ctx.drawImage(field,0,0);
 
     for(let i = 0; i < snake.length; i++){
         ctx.fillStyle = (i == 0)? "green" : "white";
@@ -83,22 +75,22 @@ let snakeX = snake[0].x;
 let snakeY = snake[0].y;
 
 //direction
-if(d == "LEFT") snakeX -= box;
-if(d == "UP") snakeY -= box;
-if(d == "RIGHT") snakeX -= box;
-if(d == "DOWN") snakeY -= box;
+if(direc == "LEFT") snakeX -= box;
+if(direc == "UP") snakeY -= box;
+if(direc == "RIGHT") snakeX += box;
+if(direc == "DOWN") snakeY += box;
 
 //if snake eats food
 if (snakeX == food.x && snakeY == food.y){
     score++;
-    eat.play();
+    // eat.play();
     food = {
         x : Math.floor(Math.random()*17+1) * box,
         y : Math.floor(Math.random()*15+3) * box
     }
 //Don't remove tail
-}else{
-//remove rail
+} else{
+//remove tail
     snake.pop();
 }
 
@@ -119,10 +111,25 @@ if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || col
 snake.unshift(newHead);
 
 ctx.fillStyle = "white";
-ctx.font = "Comic Sans MS"
+ctx.font = "45px Changa one"
 ctx.fillText(score,2*box,1.6*box);
 }
 
 //draw func every 100 ms
 
 let game = setInterval(draw,100);
+
+
+let a;
+function show_hide(){
+    if (a==1)
+    {
+        document.getElementById('snake').style.display='none';
+        return a = 0;
+    }
+else 
+{
+    document.getElementById('snake').style.display='';
+    return a = 1;
+}
+}
