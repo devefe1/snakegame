@@ -44,15 +44,6 @@ function direction(event){
     }
 }
 
-//hit wall or snake
-function collision(head,array){
-    for(let i = 0; i < array.length; i++){
-        if(head.x == array[i].x && head.y == array[i].y){
-            return true;
-        }
-    }
-    return false;
-}
 
 //put on canvas
 
@@ -83,7 +74,6 @@ if(direc == "DOWN") snakeY += box;
 //if snake eats food
 if (snakeX == food.x && snakeY == food.y){
     score++;
-    // eat.play();
     food = {
         x : Math.floor(Math.random()*17+1) * box,
         y : Math.floor(Math.random()*15+3) * box
@@ -99,6 +89,16 @@ if (snakeX == food.x && snakeY == food.y){
 let newHead = {
     x : snakeX,
     y : snakeY
+}
+
+//hit wall or snake
+function collision(head,array){
+    for(let i = 0; i < array.length; i++){
+        if(head.x == array[i].x && head.y == array[i].y){
+            return true;
+        }
+    }
+    return false;
 }
 
 //end game
